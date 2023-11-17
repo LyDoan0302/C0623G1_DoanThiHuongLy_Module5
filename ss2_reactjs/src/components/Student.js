@@ -2,31 +2,37 @@ import React from "react";
 
 const students = [
   {
+    id: 1,
     company: "Alfreds Futterkiste",
     contact: "Maria Anders",
     country: "Germany",
   },
   {
+    id: 2,
     company: "Alfreds Futterkiste",
     contact: "Maria Anders",
     country: "Germany",
   },
   {
+    id: 3,
     company: "Ernst Handel",
     contact: "Roland Mendel",
     country: "Austria",
   },
   {
+    id: 4,
     company: "Island Trading",
     contact: "Helen Bennett",
     country: "UK",
   },
   {
+    id: 5,
     company: "Laughing Bacchus Winecellars",
     contact: "Yoshi Tannamuri",
     country: "Canada",
   },
   {
+    id: 6,
     company: "Magazzini Alimentari Riuniti",
     contact: "Giovanni Rovelli",
     country: "Italy",
@@ -47,7 +53,7 @@ const Student = () => {
         </thead>
         <tbody>
           {students.map((student) => (
-            <tr class="">
+            <tr key={student.id} class="">
               <td scope="row">{student.company}</td>
               <td>{student.contact}</td>
               <td>{student.country}</td>
