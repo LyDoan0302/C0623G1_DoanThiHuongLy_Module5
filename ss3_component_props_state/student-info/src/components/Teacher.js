@@ -10,7 +10,7 @@ const teachers = [
   },
   {
     id: 2,
-    name: "PhuongDT",
+    name: "PhuongTD",
     address: "Da Nang",
   },
   {
