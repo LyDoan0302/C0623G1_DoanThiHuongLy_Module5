@@ -1,11 +1,11 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-const CustomerCreate = () => {
+const CustomerEdit = () => {
   return (
     <>
       <div className="container">
-        <h1>Thêm mới khách hàng</h1>
+        <h1>Chỉnh sửa thông tin khách hàng</h1>
         <form>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -103,4 +103,4 @@ const CustomerCreate = () => {
   );
 };
 
-export default CustomerCreate;
+export default CustomerEdit;

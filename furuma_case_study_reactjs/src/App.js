@@ -7,15 +7,19 @@ import Index from "./components/Index";
 import Create from "./components/Create";
 import Edit from "./components/Edit";
 import Customer from "./components/Customer";
+import CustomerCreate from "./components/CustomerCreate";
+import CustomerEdit from "./components/CustomerEdit";
 
 function App() {
   return (
     <>
       <CollapsibleExample />
       <Index />
-      {/* <Create />
-      <Edit /> */}
+      <Create />
+      <Edit />
       <Customer />
+      <CustomerCreate />
+      <CustomerEdit />
       <Footer />
     </>
     // <div className="App">
