@@ -9,6 +9,8 @@ import Edit from "./components/Edit";
 import Customer from "./components/Customer";
 import CustomerCreate from "./components/CustomerCreate";
 import CustomerEdit from "./components/CustomerEdit";
+import Contract from "./components/Contract";
+import ContractCreate from "./components/ContractCreate";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Customer />
       <CustomerCreate />
       <CustomerEdit />
+      <Contract />
+      <ContractCreate />
       <Footer />
     </>
     // <div className="App">
