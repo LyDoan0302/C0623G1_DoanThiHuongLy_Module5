@@ -11,7 +11,7 @@ function App() {
     <>
       <ContactForm />
       <ToastContainer />
-      <HealthDeclaration />
+      {/* <HealthDeclaration /> */}
     </>
   );
 }
