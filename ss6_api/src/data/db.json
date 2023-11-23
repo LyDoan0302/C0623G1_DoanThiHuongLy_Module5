@@ -19,6 +19,18 @@
     {
       "id": 5,
       "name": "play"
+    },
+    {
+      "name": "debug",
+      "id": 6
+    },
+    {
+      "name": "debug",
+      "id": 7
+    },
+    {
+      "name": "debug again",
+      "id": 8
     }
   ]
 }

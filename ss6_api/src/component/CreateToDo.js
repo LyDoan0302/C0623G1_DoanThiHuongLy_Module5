@@ -21,6 +21,7 @@ const CreateToDo = () => {
     if (isSuccess) {
       toast.success("Add task successfully!");
       navigate("/toDoList");
+      //   toDoList.getALl();
     } else {
       toast.error("Error");
     }
