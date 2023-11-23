@@ -27,9 +27,9 @@ export const update = async (book) => {
   }
 };
 
-export const deleteBook = async (id) => {
+export const deleteBook = async (idBook) => {
   try {
-    await axios.delete("http://localhost:3002/books/id");
+    await axios.delete(`http://localhost:3002/books/${idBook}`);
     return true;
   } catch (e) {
     return false;
