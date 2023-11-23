@@ -22,6 +22,7 @@ import {
 } from "react-router-dom";
 import NoPage from "./components/NoPage";
 import Service from "./components/Service";
+import ServiceDetail from "./components/ServiceDetail";
 
 function App() {
   return (
@@ -31,8 +32,13 @@ function App() {
           <Route path="/" element={<CollapsibleExample />}>
             <Route index element={<Index />} />
             <Route path="service" element={<Service />} />
+            <Route path="/service/:id" element={<ServiceDetail />} />
             <Route path="customer" element={<Customer />} />
             <Route path="contract" element={<Contract />} />
+            <Route path="create" element={<Create />} />
+            <Route path="customerCreate" element={<CustomerCreate />} />
+            <Route path="contractCreate" element={<ContractCreate />} />
+
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

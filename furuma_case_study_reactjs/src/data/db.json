@@ -1,0 +1,340 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "serviceName": "House ocean view",
+      "serviceType": { "id": 2, "name": "house" },
+      "area": 34,
+      "price": 2000000,
+      "maxQuantity": 5,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg",
+      "rentType": {
+        "id": 1,
+        "typeName": "year"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 2,
+      "serviceName": "House garden view",
+      "serviceType": { "id": 2, "name": "house" },
+      "area": 34,
+      "price": 2500000,
+      "maxQuantity": 6,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
+      "rentType": {
+        "id": 1,
+        "typeName": "year"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 3,
+      "serviceName": "Villa garden view",
+      "serviceType": { "id": 1, "name": "villa" },
+      "area": 34,
+      "price": 6000000,
+      "maxQuantity": 8,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-370x239.jpg",
+      "rentType": {
+        "id": 2,
+        "typeName": "month"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 4,
+      "serviceName": "Villa ocean view",
+      "serviceType": { "id": 1, "name": "villa" },
+      "area": 34,
+      "price": 7000000,
+      "maxQuantity": 10,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Lagoon-Superior-twin-bed-F-370x239.jpg",
+      "rentType": {
+        "id": 2,
+        "typeName": "month"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 5,
+      "serviceName": "Room ocean view",
+      "serviceType": { "id": 3, "name": "room" },
+      "area": 34,
+      "price": 500000,
+      "maxQuantity": 0,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Garden-Superior-TwinBed-1-F-370x239.jpg",
+      "rentType": {
+        "id": 3,
+        "typeName": "day"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 6,
+      "serviceName": "Room ocean view",
+      "serviceType": { "id": 3, "name": "room" },
+      "area": 34,
+      "price": 500000,
+      "maxQuantity": 0,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Garden-Deluxe-5-370x239.jpg",
+      "rentType": {
+        "id": 3,
+        "typeName": "day"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 7,
+      "serviceName": "Room ocean view",
+      "serviceType": { "id": 3, "name": "room" },
+      "area": 34,
+      "price": 500000,
+      "maxQuantity": 0,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Presidential-Suite-F-370x239.jpg",
+      "rentType": {
+        "id": 3,
+        "typeName": "day"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    },
+    {
+      "id": 8,
+      "serviceName": "Room ocean view",
+      "serviceType": { "id": 3, "name": "room" },
+      "area": 34,
+      "price": 500000,
+      "maxQuantity": 0,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-370x239.jpg",
+      "rentType": {
+        "id": 3,
+        "typeName": "day"
+      },
+      "houseStandard": "luxury",
+      "houseFacilities": "tub",
+      "houseFloorNumber": 2,
+      "villaStandard": "delux",
+      "villaFacilities": ["television", "onsen"],
+      "villaPoolArea": 34,
+      "villaFloorNumber": 2,
+      "roomFreeService": "wifi"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "typeName": "year"
+    },
+    {
+      "id": 2,
+      "typeName": "month"
+    },
+    {
+      "id": 3,
+      "typeName": "day"
+    },
+    {
+      "id": 4,
+      "typeName": "hour"
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "name": "villa"
+    },
+    {
+      "id": 2,
+      "name": "house"
+    },
+    {
+      "id": 3,
+      "name": "room"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "Doan Thi Huong Ly",
+      "dob": "03-02-1989",
+      "gender": 0,
+      "idCard": "233333333",
+      "phone": "0987654321",
+      "email": "lydoan@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "diamond"
+      }
+    },
+    {
+      "id": 2,
+      "fullName": "Doan Thi Thao My",
+      "dob": "03-02-1989",
+      "gender": 0,
+      "idCard": "233333333",
+      "phone": "0987654321",
+      "email": "mydoan@gmail.com",
+      "address": "Kon Tum",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "platinium"
+      }
+    },
+    {
+      "id": 3,
+      "fullName": "Nguyen Thanh Tai",
+      "dob": "03-02-1989",
+      "gender": 1,
+      "idCard": "233334433",
+      "phone": "0987654321",
+      "email": "taithanh@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "customerTypeName": "gold"
+      }
+    },
+    {
+      "id": 4,
+      "fullName": "Nguyen Van An",
+      "dob": "04-02-1989",
+      "gender": 1,
+      "idCard": "233334433",
+      "phone": "0987654321",
+      "email": "congthanh@gmail.com",
+      "address": "Ha Noi",
+      "customerType": {
+        "id": 4,
+        "customerTypeName": "silver"
+      }
+    },
+    {
+      "id": 5,
+      "fullName": "Pham Ba Dai",
+      "dob": "04-04-1989",
+      "gender": 1,
+      "idCard": "233334435",
+      "phone": "0987654321",
+      "email": "daipham@gmail.com",
+      "address": "Nghe An",
+      "customerType": {
+        "id": 5,
+        "customerTypeName": "member"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "diamond"
+    },
+    {
+      "id": 2,
+      "name": "platinium"
+    },
+    {
+      "id": 3,
+      "name": "gold"
+    },
+    {
+      "id": 4,
+      "name": "silver"
+    },
+    {
+      "id": 5,
+      "name": "member"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "contractNumber": "001",
+      "startDate": "20-10-2023",
+      "endDate": "20-10-2024",
+      "deposit": 20000000,
+      "totalPayment": "120000000"
+    },
+    {
+      "id": 2,
+      "contractNumber": "002",
+      "startDate": "20-10-2023",
+      "endDate": "20-10-2024",
+      "deposit": 20000000,
+      "totalPayment": "120000000"
+    },
+    {
+      "id": 3,
+      "contractNumber": "001",
+      "startDate": "20-10-2023",
+      "endDate": "20-10-2024",
+      "deposit": 20000000,
+      "totalPayment": "120000000"
+    },
+    {
+      "id": 4,
+      "contractNumber": "001",
+      "startDate": "20-10-2023",
+      "endDate": "20-10-2024",
+      "deposit": 20000000,
+      "totalPayment": "120000000"
+    },
+    {
+      "id": 4,
+      "contractNumber": "001",
+      "startDate": "20-10-2023",
+      "endDate": "20-10-2024",
+      "deposit": 20000000,
+      "totalPayment": "120000000"
+    }
+  ]
+}

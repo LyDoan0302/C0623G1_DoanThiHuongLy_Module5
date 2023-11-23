@@ -1,9 +1,14 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Customer = () => {
   return (
     <>
       <div>
+        <Button className="ms-10 mt-5" variant="warning">
+          <Link to="/customerCreate">Add new customer</Link>
+        </Button>
         {/* Body */}
         <div className="container" style={{ height: 500 }}>
           <div className="table-responsive">

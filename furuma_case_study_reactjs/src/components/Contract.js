@@ -1,9 +1,14 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Contract = () => {
   return (
     <>
       <div className="container" style={{ height: 500 }}>
+        <Button className="ms-10 mt-5" variant="warning">
+          <Link to="/contractCreate">Add new contract</Link>
+        </Button>
         <div className="table-responsive">
           <h1>Quản lý hợp đồng</h1>
           <table className="table table-bordered table-hover">
