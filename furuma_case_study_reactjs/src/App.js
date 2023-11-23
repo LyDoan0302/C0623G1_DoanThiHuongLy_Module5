@@ -11,37 +11,33 @@ import CustomerCreate from "./components/CustomerCreate";
 import CustomerEdit from "./components/CustomerEdit";
 import Contract from "./components/Contract";
 import ContractCreate from "./components/ContractCreate";
+import CarouselTest from "./components/CarouselTest";
+import {
+  Route,
+  Link,
+  NavLink,
+  Switch,
+  BrowserRouter,
+  Routes,
+} from "react-router-dom";
+import NoPage from "./components/NoPage";
+import Service from "./components/Service";
 
 function App() {
   return (
     <>
-      <CollapsibleExample />
-      <Index />
-      <Create />
-      <Edit />
-      <Customer />
-      <CustomerCreate />
-      <CustomerEdit />
-      <Contract />
-      <ContractCreate />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CollapsibleExample />}>
+            <Route index element={<Index />} />
+            <Route path="service" element={<Service />} />
+            <Route path="customer" element={<Customer />} />
+            <Route path="contract" element={<Contract />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

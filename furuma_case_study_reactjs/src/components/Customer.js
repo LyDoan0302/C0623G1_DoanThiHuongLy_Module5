@@ -5,7 +5,7 @@ const Customer = () => {
     <>
       <div>
         {/* Body */}
-        <div className="container">
+        <div className="container" style={{ height: 500 }}>
           <div className="table-responsive">
             <h1>Quản lý khách hàng</h1>
             <table className="table table-bordered table-hover">

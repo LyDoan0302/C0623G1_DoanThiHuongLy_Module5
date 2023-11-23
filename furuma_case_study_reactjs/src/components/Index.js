@@ -1,9 +1,11 @@
 import React from "react";
+import CarouselTest from "./CarouselTest";
 
 const Index = () => {
   return (
     <>
       <div>
+        <CarouselTest />
         {/* Body */}
         <div className="d-flex justify-content-between flex-wrap my-5 mx-5">
           <div className="card mb-5" style={{ width: "18rem" }}>
