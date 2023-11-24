@@ -6,12 +6,27 @@ import {
 } from "../redux/middleware/UserMiddleware";
 import { toast } from "react-toastify";
 import { Table } from "react-bootstrap";
-import { Modal } from "bootstrap";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 const Users = () => {
   const users = useSelector((store) => store.users);
   const dispatch = useDispatch();
   const [userDelete, setUserDelete] = useState({});
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleSubmit = () => {
+    removeUser();
+    handleClose();
+  };
+
+  const handleDelete = (user) => {
+    setUserDelete(user);
+    handleShow();
+  };
 
   useEffect(() => {
     dispatch(getAllUser());
@@ -20,6 +35,7 @@ const Users = () => {
   const removeUser = () => {
     dispatch(removeUserMiddleware(userDelete.id));
     toast.success("Deleted successfully!");
+    dispatch(getAllUser());
   };
   if (!users) {
     return null;
@@ -46,64 +62,28 @@ const Users = () => {
                 <td>{item.email}</td>
                 <td>{item.website}</td>
                 <td>
-                  <button
-                    type="button"
-                    onClick={() => setUserDelete(item)}
-                    className="btn btn-danger"
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteModal"
-                  >
+                  <Button variant="danger" onClick={() => handleDelete(item)}>
                     Delete
-                  </button>
+                  </Button>
                 </td>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>Are you sure to delete {item.name} ?!</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={handleSubmit}>
+                      Delete
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </tr>
             ))}
           </tbody>
         </Table>
-
-        <div
-          className="modal fade"
-          id="exampleModal"
-          tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="deleteModal">
-                  Delete confirm
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                />
-              </div>
-              <div className="modal-body">
-                Are you sure to delete {"{"}userDelete.name{"}"} ?
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  onClick={removeUser}
-                  className="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

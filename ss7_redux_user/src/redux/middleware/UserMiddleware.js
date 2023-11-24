@@ -5,7 +5,7 @@ export const getAllUser = () => async (dispatch) => {
   const res = await userService.getAll();
   dispatch({
     type: GET_ALL_USER,
-    payload: res,
+    payload: res.data,
   });
 };
 

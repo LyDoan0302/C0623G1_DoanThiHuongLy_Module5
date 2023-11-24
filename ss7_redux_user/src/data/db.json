@@ -1,40 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Doan Ly",
-      "email": "lydoan@gmail.com",
-      "website": "ly.com"
-    },
-    {
-      "id": 2,
-      "name": "Janny Ly",
-      "email": "lydoan@gmail.com",
-      "website": "lafdsafy.com"
-    },
-    {
       "id": 3,
       "name": "Doan Nam",
       "email": "lydoan@gmail.com",
       "website": "lafdasy.com"
     },
     {
-      "id": 4,
-      "name": "John Adam",
-      "email": "lydoan@gmail.com",
-      "website": "adfma.com"
-    },
-    {
       "id": 5,
       "name": "Jerry",
       "email": "jerryoan@gmail.com",
       "website": "adsfas.com"
-    },
-    {
-      "id": 6,
-      "name": "Jonh Nguyen",
-      "email": "john@gmail.com",
-      "website": "lyadfasf.com"
     }
   ]
 }
