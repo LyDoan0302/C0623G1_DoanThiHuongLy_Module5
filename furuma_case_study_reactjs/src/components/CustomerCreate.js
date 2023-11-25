@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import * as customerService from "../service/CustomerService";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 const CustomerCreate = () => {
@@ -93,6 +93,7 @@ const CustomerCreate = () => {
                 id="exampleInputEmail2"
                 aria-describedby="emailHelp"
               />
+              <ErrorMessage name="dob" component="span" className="err-mess" />
             </div>
             {/* <div className="dropdown">
               <label className="form-label">Giới tính</label>
@@ -134,6 +135,11 @@ const CustomerCreate = () => {
                 id="exampleInputEmail3"
                 aria-describedby="emailHelp"
               />
+              <ErrorMessage
+                name="idCard"
+                component="span"
+                className="err-mess"
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail4" className="form-label">
@@ -146,6 +152,11 @@ const CustomerCreate = () => {
                 id="exampleInputEmail4"
                 aria-describedby="emailHelp"
               />
+              <ErrorMessage
+                name="phone"
+                component="span"
+                className="err-mess"
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail5" className="form-label">
@@ -157,6 +168,11 @@ const CustomerCreate = () => {
                 className="form-control"
                 id="exampleInputEmail5"
                 aria-describedby="emailHelp"
+              />
+              <ErrorMessage
+                name="email"
+                component="span"
+                className="err-mess"
               />
             </div>
             {/* <div className="dropdown">
