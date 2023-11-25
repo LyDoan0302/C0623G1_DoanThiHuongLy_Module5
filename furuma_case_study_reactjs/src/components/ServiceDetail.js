@@ -2,22 +2,28 @@ import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import * as facilityService from "../service/FacilityService";
 import { useParams } from "react-router-dom";
+import HouseService from "./HouseService";
+import VillaService from "./VillaService";
+import RoomService from "./RoomService";
 
 const ServiceDetail = () => {
-  const [facility, setFacility] = useState({});
+  const [facility, setFacility] = useState();
   const { id } = useParams();
+
   useEffect(() => {
     getFacilityById();
-  }, {});
+  }, []);
+
   const getFacilityById = async () => {
-    let data = await facilityService.getFacilityById(id);
-    console.log(data);
-    setFacility(data.data);
+    let res = await facilityService.getFacilityById(id);
+    console.log(res.data);
+    setFacility(res.data);
   };
 
   if (!facility) {
     return null;
   }
+
   return (
     <>
       <div className="container">
@@ -40,10 +46,19 @@ const ServiceDetail = () => {
             <p>Max quantity of people: </p>
             <ListGroup.Item>{facility.maxQuantity}</ListGroup.Item>
           </div>
-          {/* <div className="mb-3">
-            <p>Rent of type: </p>
+          <div className="mb-3">
+            <p>Type of renting: </p>
             <ListGroup.Item>{facility.rentType.typeName}</ListGroup.Item>
-          </div> */}
+          </div>
+          {facility.serviceType.name === "house" && (
+            <HouseService facility={facility} />
+          )}
+          {facility.serviceType.name === "villa" && (
+            <VillaService facility={facility} />
+          )}
+          {facility.serviceType.name === "room" && (
+            <RoomService facility={facility} />
+          )}
         </ListGroup>
       </div>
     </>

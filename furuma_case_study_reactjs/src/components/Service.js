@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as facilityService from "../service/FacilityService";
 
 const Service = () => {
-  const [facilities, setFacilities] = useState([]);
+  const [facilities, setFacilities] = useState();
   useEffect(() => {
     getAll();
   }, []);
@@ -20,7 +20,7 @@ const Service = () => {
     <>
       <div className="justify-content-between flex-wrap my-5 mx-5">
         <Button className="ms-10 mt-5" variant="warning">
-          <Link to="create">Add new service</Link>
+          <Link to="service/create">Add new service</Link>
         </Button>
       </div>
 

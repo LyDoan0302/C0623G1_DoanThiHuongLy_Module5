@@ -35,7 +35,7 @@ function App() {
             <Route path="/service/:id" element={<ServiceDetail />} />
             <Route path="customer" element={<Customer />} />
             <Route path="contract" element={<Contract />} />
-            <Route path="create" element={<Create />} />
+            <Route path="service/create" element={<Create />} />
             <Route path="customerCreate" element={<CustomerCreate />} />
             <Route path="contractCreate" element={<ContractCreate />} />
 
