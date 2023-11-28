@@ -32,9 +32,20 @@ export const removeFacility = async (id) => {
     return false;
   }
 };
-export const editFacility = async (id) => {
+export const findById = async (id) => {
   try {
-    await axios.patch(`http://localhost:8001/services/${id}`);
+    let res = await axios.get(`http://localhost:8001/services/${id}`);
+    return res;
+  } catch (e) {
+    return undefined;
+  }
+};
+export const editFacility = async (facility) => {
+  try {
+    await axios.patch(
+      `http://localhost:8001/services/${facility.id}`,
+      facility
+    );
     return true;
   } catch (e) {
     return false;

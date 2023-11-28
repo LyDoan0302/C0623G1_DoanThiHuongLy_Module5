@@ -23,6 +23,8 @@ import {
 import NoPage from "./components/NoPage";
 import Service from "./components/Service";
 import ServiceDetail from "./components/ServiceDetail";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -31,10 +33,13 @@ function App() {
         <Routes>
           <Route path="/" element={<CollapsibleExample />}>
             <Route index element={<Index />} />
-            <Route path="service" element={<Service />} />
+            <Route path="services" element={<Service />} />
+            <Route path="service/edit/:id" element={<Edit />}></Route>
+            <Route path="services/:faci" element={<Service />} />
             <Route path="/service/:id" element={<ServiceDetail />} />
-            <Route path="customer" element={<Customer />} />
-            <Route path="contract" element={<Contract />} />
+            <Route path="customers" element={<Customer />} />
+            <Route path="customer/:id" element={<CustomerEdit />} />
+            <Route path="contracts" element={<Contract />} />
             <Route path="service/create" element={<Create />} />
             <Route path="customerCreate" element={<CustomerCreate />} />
             <Route path="contractCreate" element={<ContractCreate />} />
@@ -43,6 +48,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }

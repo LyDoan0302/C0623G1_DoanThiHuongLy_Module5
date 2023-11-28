@@ -2,11 +2,23 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Route, Link, NavLink, Switch, Outlet } from "react-router-dom";
+import {
+  Route,
+  Link,
+  NavLink,
+  Switch,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
 import { Footer } from "./Footer";
 import CarouselTest from "./CarouselTest";
 
 function CollapsibleExample() {
+  const navigate = useNavigate();
+  const handleNavigate = (facility, e) => {
+    e.preventDefault();
+    navigate(`/services/${facility}`);
+  };
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -27,9 +39,24 @@ function CollapsibleExample() {
             <Nav className="me-auto">
               <Nav.Link href="#features">Giới thiệu</Nav.Link>
               <NavDropdown title="Loại phòng" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Villa</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">House</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Room</NavDropdown.Item>
+                <NavDropdown.Item
+                  href="#action/3.1"
+                  onClick={(e) => handleNavigate("villa", e)}
+                >
+                  Villa
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="#action/3.2"
+                  onClick={(e) => handleNavigate("house", e)}
+                >
+                  House
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="#action/3.3"
+                  onClick={(e) => handleNavigate("room", e)}
+                >
+                  Room
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
               </NavDropdown>
             </Nav>
@@ -37,14 +64,14 @@ function CollapsibleExample() {
             <Nav>
               <NavDropdown title="Quản lý" id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
-                  <Link to="service">Dịch vụ</Link>
+                  <Link to="services">Dịch vụ</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                  <Link to="customer">Khách hàng</Link>
+                  <Link to="customers">Khách hàng</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
                   {" "}
-                  <Link to="contract">Hợp đồng</Link>
+                  <Link to="contracts">Hợp đồng</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
               </NavDropdown>

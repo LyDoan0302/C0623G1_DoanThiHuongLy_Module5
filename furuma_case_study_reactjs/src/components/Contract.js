@@ -1,13 +1,49 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import * as contractService from "../service/ContractService";
+import { toast } from "react-toastify";
 
 const Contract = () => {
+  const [show, setShow] = useState(false);
+  const [contracts, setContracts] = useState();
+  const [idDelete, setIdDelete] = useState(-1);
+  const [contractNumberDel, setContractNumberDel] = useState("");
+
+  const handleClose = () => setShow(false);
+  const handleShow = (contractId, contractNumber) => {
+    setIdDelete(contractId);
+    setContractNumberDel(contractNumber);
+    setShow(true);
+  };
+  useEffect(() => {
+    getAll();
+  }, []);
+
+  const getAll = async () => {
+    let res = await contractService.getAll();
+    setContracts(res.data);
+  };
+
+  const handleDelete = async () => {
+    let isDeleted = await contractService.removeContract(idDelete);
+    if (isDeleted) {
+      toast.success("Đã xoá thành công!");
+      setShow(false);
+      getAll();
+    } else {
+      toast.error("Xoá thất bại");
+      setShow(false);
+    }
+  };
+  if (!contracts) {
+    return null;
+  }
   return (
     <>
-      <div className="container" style={{ height: 500 }}>
+      <div className="container" style={{ minHeight: 500 }}>
         <Button className="ms-10 mt-5" variant="warning">
-          <Link to="/contractCreate">Add new contract</Link>
+          <Link to="/contractCreate">Thêm mới hợp đồng</Link>
         </Button>
         <div className="table-responsive">
           <h1>Quản lý hợp đồng</h1>
@@ -24,41 +60,46 @@ const Contract = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className>
-                <td scope="row">001</td>
-                <td>Ly_thuê villa</td>
-                <td>0001</td>
-                <td>17/11/2023</td>
-                <td>20/11/2023</td>
-                <td>3000000</td>
-                <td>12000000</td>
-                <td>
-                  <div>
-                    <a href>
-                      <i
-                        className="bx bxs-message-edit"
-                        style={{ color: "#49a681" }}
-                      />
-                    </a>
-                    <a href />
-                    <i className="bx bx-detail" style={{ color: "#49a681" }} />
-                    {/* Button trigger modal */}
-                    <button
-                      style={{ backgroundColor: "#49a681", color: "white" }}
-                      type="button"
-                      className="btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
+              {contracts.map((item, index) => (
+                <tr key={item.id}>
+                  <td>{index + 1}</td>
+                  <td>{item.contractNumber}</td>
+                  <td>{item.startDate}</td>
+                  <td>{item.endDate}</td>
+                  <td>{item.deposit}</td>
+                  <td>{item.totalPayment}</td>
+                  <td>
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        handleShow(item.id, item.contractNumber);
+                      }}
                     >
                       Xoá
-                    </button>
-                  </div>
-                </td>
-              </tr>
+                    </Button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Xác nhận xoá</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Bạn có chắc chắn muốn xoá {contractNumberDel} không ?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Huỷ
+          </Button>
+          <Button variant="danger" onClick={handleDelete}>
+            Xoá
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

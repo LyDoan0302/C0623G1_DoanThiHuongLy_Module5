@@ -31,23 +31,23 @@ const ServiceDetail = () => {
         <img src={facility.img} className="card-img-top" alt="..." />
         <ListGroup>
           <div className="mb-3 mt-3">
-            <p>Service name: </p>
+            <p>Tên dịch vụ </p>
             <ListGroup.Item>{facility.serviceName}</ListGroup.Item>
           </div>
           <div className="mb-3">
-            <p>Area (m2): </p>
+            <p>Diện tích (m2): </p>
             <ListGroup.Item>{facility.area}</ListGroup.Item>
           </div>
           <div className="mb-3">
-            <p>Price (VND): </p>
+            <p>Giá thuê (VND): </p>
             <ListGroup.Item>{facility.price}</ListGroup.Item>
           </div>
           <div className="mb-3">
-            <p>Max quantity of people: </p>
+            <p>Số lượng người tôí đa: </p>
             <ListGroup.Item>{facility.maxQuantity}</ListGroup.Item>
           </div>
           <div className="mb-3">
-            <p>Type of renting: </p>
+            <p>Kiểu thuê: </p>
             <ListGroup.Item>{facility.rentType.typeName}</ListGroup.Item>
           </div>
           {facility.serviceType.name === "house" && (

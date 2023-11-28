@@ -6,19 +6,19 @@ const VillaService = (props) => {
   return (
     <>
       <div className="mb-3">
-        <p>Villa Standard: </p>
+        <p>Tiêu chuẩn Villa: </p>
         <ListGroup.Item>{facility.villaStandard}</ListGroup.Item>
       </div>
       <div className="mb-3">
-        <p>Facilities: </p>
+        <p>Tiện ích: </p>
         <ListGroup.Item>{facility.villaFacilities}</ListGroup.Item>
       </div>
       <div className="mb-3">
-        <p>Pool's area: </p>
+        <p>Diện tích hồ bơi: </p>
         <ListGroup.Item>{facility.villaPoolArea}</ListGroup.Item>
       </div>
       <div className="mb-3">
-        <p>Number of floor: </p>
+        <p>Số tầng của Villa: </p>
         <ListGroup.Item>{facility.villaFloorNumber}</ListGroup.Item>
       </div>
     </>

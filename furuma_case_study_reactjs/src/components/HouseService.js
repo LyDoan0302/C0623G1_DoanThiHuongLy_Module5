@@ -6,15 +6,15 @@ const HouseService = (props) => {
   return (
     <>
       <div className="mb-3">
-        <p>House standard: </p>
+        <p>Tiêu chuẩn House </p>
         <ListGroup.Item>{facility.houseStandard}</ListGroup.Item>
       </div>
       <div className="mb-3">
-        <p>House's facilities: </p>
+        <p>Tiện ích của House </p>
         <ListGroup.Item>{facility.houseFacilities}</ListGroup.Item>
       </div>
       <div className="mb-3">
-        <p>Number of floor: </p>
+        <p>Số tầng của House </p>
         <ListGroup.Item>{facility.houseFloorNumber}</ListGroup.Item>
       </div>
     </>

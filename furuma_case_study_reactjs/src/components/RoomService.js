@@ -6,7 +6,7 @@ const RoomService = (props) => {
   return (
     <>
       <div className="mb-3">
-        <p>Free service: </p>
+        <p>Dịch vụ miễn phí: </p>
         <ListGroup.Item>{facility.roomFreeService}</ListGroup.Item>
       </div>
     </>

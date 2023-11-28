@@ -5,16 +5,22 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { FormSelect } from "react-bootstrap";
 
 const CustomerCreate = () => {
+  const [gender, setGender] = useState();
   const [customer, setCustomer] = useState();
   const navigate = useNavigate();
-  const [customerType, setCustomerType] = useState();
+  const [customerTypes, setCustomerTypes] = useState();
 
   useEffect(() => {
-    getCustomerType();
-  });
+    getAllCustomeType();
+  }, []);
 
+  const getAllCustomeType = async () => {
+    let res = await customerService.getCutomerType();
+    setCustomerTypes(res.data);
+  };
   const initValue = {
     fullName: "",
     dob: "",
@@ -23,38 +29,37 @@ const CustomerCreate = () => {
     phone: "",
     email: "",
     address: "",
-    customerType: {},
+    customerType: 1,
   };
 
   const validateObject = {
-    fullName: Yup.string().required("Name is required"),
-    dob: Yup.date().required("Date of birth is required"),
-    idCard: Yup.string()
-      .min(10, "Length of IdCard is 10 or 12")
-      .max(12, "Length of IdCard is 10 or 12")
-      .required("IdCard is required"),
-    phone: Yup.string().required("Phone number is required"),
-    email: Yup.email().required("Email is required"),
-    address: Yup.string().required("Address is required"),
+    // fullName: Yup.string().required("Name is required"),
+    // dob: Yup.date().required("Date of birth is required"),
+    // idCard: Yup.string()
+    //   .min(10, "Length of IdCard is 10 or 12")
+    //   .max(12, "Length of IdCard is 10 or 12")
+    //   .required("IdCard is required"),
+    // phone: Yup.string().required("Phone number is required"),
+    // email: Yup.string().email().required("Email is required"),
+    // address: Yup.string().required("Address is required"),
   };
   const saveCustomer = async (value) => {
-    let isAdded = await customerService.saveCustomer(value);
+    const obj = {
+      ...value,
+      customerType: customerTypes.find(
+        (cus) => +cus.id === +value.customerType
+      ),
+    };
+    console.log(obj);
+    let isAdded = await customerService.saveCustomer(obj);
     if (isAdded) {
-      toast.success("Add new customer successfully!");
+      toast.success("Đã thêm mới khách hàng thành công!");
       navigate("/customers");
     } else {
-      toast.error("Add customer fail!");
+      toast.error("Thêm mới thất bại");
     }
   };
-  const handleInputChange = (e) => {
-    const { value } = e.target;
-    setCustomer(+value);
-  };
-  const getCustomerType = async () => {
-    let res = await customerService.getCutomerType();
-    setCustomerType(res.data);
-  };
-  if (!customerType) {
+  if (!customerTypes) {
     return null;
   }
 
@@ -64,8 +69,9 @@ const CustomerCreate = () => {
         <h1>Thêm mới khách hàng</h1>
         <Formik
           initialValues={initValue}
-          onSubmit={(value) => {
-            saveCustomer(value);
+          onSubmit={(values) => {
+            console.log(values);
+            saveCustomer(values);
           }}
           validationSchema={Yup.object(validateObject)}
         >
@@ -112,17 +118,16 @@ const CustomerCreate = () => {
             {/* Gioi tinh */}
             <div className="dropdown mb-3">
               <label className="form-label">Giới tính</label>
-              <FormSelect
+              <Field
                 className="form-select"
                 name="gender"
                 as="select"
                 aria-label="Default select example"
-                onChange={handleInputChange}
               >
                 <option value="0">Nữ</option>
                 <option value="1">Nam</option>
                 <option value="2">Khác</option>
-              </FormSelect>
+              </Field>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail3" className="form-label">
@@ -175,6 +180,23 @@ const CustomerCreate = () => {
                 className="err-mess"
               />
             </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail5" className="form-label">
+                Địa chỉ
+              </label>
+              <Field
+                name="address"
+                type="text"
+                className="form-control"
+                id="exampleInputEmail5"
+                aria-describedby="emailHelp"
+              />
+              <ErrorMessage
+                name="address"
+                component="span"
+                className="err-mess"
+              />
+            </div>
             {/* <div className="dropdown">
               <label className="form-label">Loại khách</label>
 
@@ -194,17 +216,13 @@ const CustomerCreate = () => {
             {/* Loại khach hang */}
             <div className="dropdown mb-3">
               <label className="form-label">Loại khách hàng</label>
-              <FormSelect
-                className="form-select"
-                name="customerType"
-                as="select"
-                aria-label="Default select example"
-                onChange={handleInputChange}
-              >
-                {customerType.map((item) => (
-                  <option value={item.id}>{item.name}</option>
+              <Field className="form-select" name="customerType" as="select">
+                {customerTypes.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name}
+                  </option>
                 ))}
-              </FormSelect>
+              </Field>
             </div>
             <button type="submit" className="btn btn-warning my-5">
               Lưu thông tin khách hàng

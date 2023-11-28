@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import * as contractService from "../service/ContractService";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ContractCreate = () => {
   const [contract, setContract] = useState();
+  const navigate = useNavigate();
   const initValue = {
     contractNumber: "",
     startDate: "",
@@ -83,7 +86,7 @@ const ContractCreate = () => {
               </label>
               <Field
                 name="endDate"
-                type="text"
+                type="date"
                 className="form-control"
                 id="exampleInputEmail3"
                 aria-describedby="emailHelp"
@@ -96,7 +99,7 @@ const ContractCreate = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail4" className="form-label">
-                Số tiền cọc trước
+                Số tiền cọc trước (VND)
               </label>
               <Field
                 name="deposit"
@@ -113,7 +116,7 @@ const ContractCreate = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail5" className="form-label">
-                Tổng số tiền thanh toán
+                Tổng số tiền thanh toán (VND)
               </label>
               <Field
                 name="totalPayment"
