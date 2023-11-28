@@ -348,50 +348,42 @@
     {
       "id": 1,
       "contractNumber": "202310001",
-      "startDate": "20-10-2023",
-      "endDate": "20-10-2024",
+      "startDate": "2023-10-09",
+      "endDate": "2024-10-09",
       "deposit": 20000000,
       "totalPayment": 120000000
     },
     {
       "id": 2,
       "contractNumber": "202310002",
-      "startDate": "20-10-2023",
-      "endDate": "20-10-2024",
+      "startDate": "2023-10-20",
+      "endDate": "2024-10-20",
       "deposit": 20000000,
       "totalPayment": 120000000
     },
     {
       "id": 3,
-      "contractNumber": "202310003",
-      "startDate": "20-10-2023",
-      "endDate": "20-10-2024",
+      "contractNumber": "202311001",
+      "startDate": "2023-11-09",
+      "endDate": "2024-11-09",
       "deposit": 20000000,
       "totalPayment": 120000000
     },
     {
       "id": 4,
-      "contractNumber": "202310004",
-      "startDate": "20-10-2023",
-      "endDate": "20-10-2024",
+      "contractNumber": "202311002",
+      "startDate": "2023-11-29",
+      "endDate": "2024-11-29",
       "deposit": 20000000,
       "totalPayment": 120000000
     },
     {
       "id": 4,
-      "contractNumber": "202310005",
-      "startDate": "20-10-2023",
-      "endDate": "20-10-2024",
+      "contractNumber": "202312001",
+      "startDate": "2023-12-19",
+      "endDate": "2024-01-19",
       "deposit": 20000000,
       "totalPayment": 120000000
-    },
-    {
-      "contractNumber": "adsf",
-      "startDate": "2023-11-10",
-      "endDate": "2023-12-09",
-      "deposit": 111,
-      "totalPayment": 11111,
-      "id": 5
     }
   ]
 }

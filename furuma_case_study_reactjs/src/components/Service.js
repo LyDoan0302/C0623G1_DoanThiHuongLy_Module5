@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { XSquare, PencilSquare } from "react-bootstrap-icons";
+import { XSquare, PencilSquare, CardText } from "react-bootstrap-icons";
 import { Link, useLocation, useParams } from "react-router-dom";
 import * as facilityService from "../service/FacilityService";
 import Modal from "react-bootstrap/Modal";
@@ -74,6 +74,7 @@ const Service = () => {
                           to={`/service/${item.id}`}
                           className="btn btn-primary"
                         >
+                          <CardText />
                           Chi tiết
                         </Link>
                       </div>
